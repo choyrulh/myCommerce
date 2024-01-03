@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   HiMiniArrowSmallDown,
   HiOutlineArrowRightOnRectangle,
@@ -9,12 +9,26 @@ import {
 } from "react-icons/hi2";
 import DarkModeToggle from "./DarkModeToggle";
 
-const UserProfil = () => {
+const UserProfile = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
-
+  let outsideRef = useRef(null);
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
   };
+
+  useEffect(() => {
+    let handler = (event) => {
+      if (!outsideRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  }, [isDropdownOpen]);
 
   const arrowVariants = {
     initial: { rotate: 0, y: 0 },
@@ -22,7 +36,7 @@ const UserProfil = () => {
   };
 
   return (
-    <div className="relative mr-3">
+    <span className="relative mr-3">
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -45,6 +59,7 @@ const UserProfil = () => {
 
       {isDropdownOpen && (
         <motion.div
+          ref={outsideRef}
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
@@ -71,8 +86,8 @@ const UserProfil = () => {
           </ul>
         </motion.div>
       )}
-    </div>
+    </span>
   );
 };
 
-export default UserProfil;
+export default UserProfile;
