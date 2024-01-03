@@ -18,7 +18,7 @@ const UserProfile = () => {
 
   useEffect(() => {
     let handler = (event) => {
-      if (!outsideRef.current.contains(event.target)) {
+      if (outsideRef.current && !outsideRef.current.contains(event.target)) {
         setDropdownOpen(false);
       }
     };
@@ -36,16 +36,19 @@ const UserProfile = () => {
   };
 
   return (
-    <span className="relative mr-3">
-      <motion.div
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="flex items-center space-x-2 cursor-pointer"
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      ref={outsideRef}
+      className="relative mr-3"
+    >
+      <div
         onClick={toggleDropdown}
+        className="flex items-center space-x-2 cursor-pointer"
       >
         <HiUserCircle className="h-8 w-8" />
-        <span className="text-sm font-semibold">John Doe</span>
+        <span className="text-sm font-semibold">Choirul Humam</span>
         <motion.span
           variants={arrowVariants}
           initial="initial"
@@ -55,7 +58,7 @@ const UserProfile = () => {
         >
           <HiMiniArrowSmallDown className="h-4 w-4" />
         </motion.span>
-      </motion.div>
+      </div>
 
       {isDropdownOpen && (
         <motion.div
@@ -86,7 +89,7 @@ const UserProfile = () => {
           </ul>
         </motion.div>
       )}
-    </span>
+    </motion.div>
   );
 };
 

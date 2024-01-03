@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 import logo from "../assets/logo.png";
 import { PropTypes } from "prop-types";
@@ -6,6 +6,7 @@ import SearchBar from "../components/header/SearchBar";
 import UserProfile from "../components/header/UserProfile";
 import { useEffect, useState } from "react";
 import { HiBars3, HiMiniXMark } from "react-icons/hi2";
+import Cart from "../components/header/Cart";
 function Header() {
   const controls = useAnimation();
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -87,11 +88,13 @@ function Header() {
       transition={{ duration: 0.5 }}
       className="bg-slate-600 w-full h-min mx-auto text-white flex flex-row justify-between items-center p-2 sticky top-0 z-10"
     >
-      <img
-        src={logo}
-        alt="logo"
-        className="hidden sm:hidden md:block w-10 h-10"
-      />
+      <Link to="/">
+        <img
+          src={logo}
+          alt="logo"
+          className="hidden sm:hidden md:block w-10 h-10"
+        />
+      </Link>
       <span
         className={`${
           isMenuOpen ? "bg-black" : ""
@@ -109,7 +112,7 @@ function Header() {
             initial={{ opacity: 0, y: -5 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="absolute top-10 left-4 bg-gray-800 p-4 rounded-b-md rounded-tr-md shadow-md"
+            className="min-h-auto min-w-auto absolute top-10 left-4 bg-gray-800 p-4 rounded-b-md rounded-tr-md shadow-md"
           >
             {navbar}
           </motion.ul>
@@ -123,8 +126,10 @@ function Header() {
         {navbar}
       </motion.ul>
       <SearchBar />
-
-      <UserProfile />
+      <div className="flex flex-row items-center gap-3">
+        <Cart />
+        <UserProfile />
+      </div>
     </motion.header>
   );
 }
