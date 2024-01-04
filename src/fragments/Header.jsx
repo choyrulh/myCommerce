@@ -89,16 +89,12 @@ function Header() {
       className="bg-slate-600 w-full h-min mx-auto text-white flex flex-row justify-between items-center p-2 sticky top-0 z-10"
     >
       <Link to="/">
-        <img
-          src={logo}
-          alt="logo"
-          className="hidden sm:hidden md:block w-10 h-10"
-        />
+        <img src={logo} alt="logo" className="hidden md:block w-10 h-10" />
       </Link>
       <span
         className={`${
           isMenuOpen ? "bg-black" : ""
-        } sm:hidden rounded-lg bg-transparent p-2 text-white`}
+        } mr-auto sm:hidden rounded-lg bg-transparent p-2 text-white`}
       >
         <button className="" aria-hidden="true" onClick={handleClickMenu}>
           {isMenuOpen ? (

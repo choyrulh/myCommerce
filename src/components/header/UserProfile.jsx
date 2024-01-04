@@ -41,7 +41,7 @@ const UserProfile = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       ref={outsideRef}
-      className="relative mr-3"
+      className="relative ml-auto mr-3"
     >
       <div
         onClick={toggleDropdown}
