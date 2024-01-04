@@ -1,7 +1,8 @@
 import Banner from "../components/Banner";
-import Filter from "../components/Filter";
+
 import Aside from "../fragments/Aside";
 import CardContainer from "../fragments/CardContainer";
+import Filter from "./../fragments/Filter";
 
 function Home() {
   return (

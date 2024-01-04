@@ -122,7 +122,7 @@ function Header() {
         {navbar}
       </motion.ul>
       <SearchBar />
-      <div className="flex flex-row items-center gap-3">
+      <div className=" flex flex-row items-center gap-3">
         <Cart />
         <UserProfile />
       </div>
