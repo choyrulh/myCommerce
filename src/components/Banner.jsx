@@ -14,7 +14,7 @@ function Banner() {
         <motion.img
           src={headphone}
           alt="Product"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain"
           whileHover={{ scale: 1.1 }} // Add this line for hover animation
         />
         <div className="absolute inset-0 bg-black opacity-50"></div>

@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
-import logo from "../assets/logo.png";
+import logo from "../assets/logoTas.png";
 import { PropTypes } from "prop-types";
 import SearchBar from "../components/header/SearchBar";
 import UserProfile from "../components/header/UserProfile";
@@ -88,8 +88,12 @@ function Header() {
       transition={{ duration: 0.5 }}
       className="bg-slate-600 w-full h-min mx-auto text-white flex flex-row justify-between items-center p-2 sticky top-0 z-10"
     >
-      <Link to="/">
-        <img src={logo} alt="logo" className="hidden md:block w-10 h-10" />
+      <Link
+        to="/"
+        className="hidden md:flex flex-row justify-center items-center gap-2"
+      >
+        <img src={logo} alt="logo" className=" w-10 h-10" />
+        <h1 className="text-2xl">TokoKita</h1>
       </Link>
       <span
         className={`${

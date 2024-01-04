@@ -15,7 +15,7 @@ const CardProduct = () => {
 
   return (
     <>
-      <motion.div
+      <motion.li
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -50,7 +50,7 @@ const CardProduct = () => {
             </motion.button>
           </div>
         </div>
-      </motion.div>
+      </motion.li>
     </>
   );
 };
