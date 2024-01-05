@@ -30,7 +30,7 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="text-gray-500 bg-white dark:bg-black px-4 py-5 max-w-screen-xl mx-auto md:px-8">
+    <footer className="text-gray-500 px-4 py-5 max-w-screen-xl mx-auto md:px-8">
       <div className="max-w-lg sm:mx-auto sm:text-center dark:text-white">
         <img src={logo} className="size-20 sm:mx-auto" />
         <p className="leading-relaxed mt-2 text-[15px]">
@@ -48,7 +48,7 @@ export const Footer = () => {
       </ul>
       <div className="mt-8 items-center justify-between sm:flex">
         <div className="mt-4 sm:mt-0 dark:text-white">
-          &copy; 2022 Float UI All rights reserved.
+          &copy; {new Date().getFullYear()} Float UI All rights reserved.
         </div>
         <div className="mt-6 sm:mt-0">
           <ul className="flex items-center space-x-4">

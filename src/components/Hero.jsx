@@ -7,13 +7,13 @@ import android from "../assets/android.png";
 import clothes from "../assets/baju.png";
 import { motion } from "framer-motion";
 
-function Banner() {
+function HeroSection() {
   return (
-    <motion.div
+    <motion.section
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
-      className="relative h-80 rounded-md bg-gradient-to-br mt-3 from-gray-800 to-purple-900 overflow-hidden"
+      className=" shadow-md shadow-[#B3B3B3] relative h-80 rounded-md bg-transparent dark:bg-gradient-to-br mt-3 from-gray-800 to-purple-900 overflow-hidden"
     >
       <ul className="absolute inset-0 flex flex-row items-center">
         <li className="size-48 md:w-1/6 w-full translate-x-4 translate-y-5 rotate-45">
@@ -60,7 +60,7 @@ function Banner() {
         </li>
       </ul>
 
-      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="absolute inset-0 bg-gray-400 dark:bg-black opacity-50"></div>
 
       <div className="absolute inset-0 flex items-center justify-center text-white">
         <div className="text-center">
@@ -74,8 +74,8 @@ function Banner() {
           </Link>
         </div>
       </div>
-    </motion.div>
+    </motion.section>
   );
 }
 
-export default Banner;
+export default HeroSection;

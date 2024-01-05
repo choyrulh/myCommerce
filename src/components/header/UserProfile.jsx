@@ -46,7 +46,7 @@ const UserProfile = () => {
         onClick={toggleDropdown}
         className="flex items-center space-x-2 cursor-pointer"
       >
-        <HiUserCircle className="h-8 w-8" />
+        <HiUserCircle className="h-8 w-8 text-white dark:text-gray-400" />
         <span className="text-sm font-semibold">Choirul Humam</span>
         <motion.span
           variants={arrowVariants}
