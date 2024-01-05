@@ -1,8 +1,7 @@
-import Banner from "../components/Banner";
-
 import Aside from "../fragments/Aside";
 import CardContainer from "../fragments/CardContainer";
 import Filter from "./../fragments/Filter";
+import Hero from "./../components/Hero";
 
 function Home() {
   return (
@@ -10,7 +9,7 @@ function Home() {
       <div className="flex flex-col md:flex-row">
         <Aside />
         <div className="w-full md:w-11/12 ml-auto ">
-          <Banner />
+          <Hero />
           <Filter />
           <CardContainer />
         </div>

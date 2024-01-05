@@ -16,7 +16,7 @@ function FilterBy() {
   return (
     <div className="px-3 relative inline-block text-left mt-3">
       <span
-        className="cursor-pointer bg-[#CCCCCC] dark:bg-[#333333] w-28 md:w-36 lg:w-60 justify-between flex flex-row gap-1 rounded-full items-center px-auto shadow-md shadow-[#B3B3B3] dark:shadow-[#555555] "
+        className="cursor-pointer bg-[#CCCCCC] dark:bg-[#333333] w-28 md:w-36 lg:w-60 justify-between flex flex-row gap-1 rounded-full items-center px-auto shadow-md shadow-[#B3B3B3] dark:shadow-[#222222] "
         onClick={toggleDropdown}
       >
         <p className="dark:text-white text-lg mr-auto ml-2">Filter</p>

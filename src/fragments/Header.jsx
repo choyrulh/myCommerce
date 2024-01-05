@@ -61,9 +61,7 @@ function Header() {
     <NavLink
       to={to}
       onClick={handleClickWindow}
-      className={({ isActive }) =>
-        isActive ? "dark:text-cyan-500 text-cyan-600" : undefined
-      }
+      className={({ isActive }) => (isActive ? " text-[#25AAE1]" : undefined)}
     >
       <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 1.0 }}>
         {children}
@@ -95,8 +93,11 @@ function Header() {
         className="hidden md:flex flex-row justify-center items-center gap-2"
       >
         <img src={logo} alt="logo" className=" w-10 h-10" />
-        <h1 className="text-2xl flex">
-          Toko<p className="font-bold">Kita</p>
+        <h1 className="text-2xl flex ">
+          Toko
+          <p className="font-bold bg-gradient-to-r from-[#EF5396] via-transparent to-[#25AAE1] text-transparent bg-clip-text">
+            Kita
+          </p>
         </h1>
       </Link>
       <span
@@ -105,18 +106,24 @@ function Header() {
         } mr-auto sm:hidden rounded-lg bg-transparent p-2 text-white`}
       >
         <button className="" aria-hidden="true" onClick={handleClickMenu}>
-          {isMenuOpen ? (
-            <HiMiniXMark className="w-6 h-6" />
-          ) : (
-            <HiBars3 className="w-6 h-6" />
-          )}
+          <motion.div
+            initial={false}
+            animate={{ rotate: isMenuOpen ? 45 : 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {isMenuOpen ? (
+              <HiMiniXMark className="w-6 h-6" />
+            ) : (
+              <HiBars3 className="w-6 h-6" />
+            )}
+          </motion.div>
         </button>
         {isMenuOpen && (
           <motion.ul
             initial={{ opacity: 0, y: -5 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="min-h-auto min-w-auto absolute top-10 left-4 bg-gray-800 p-4 rounded-b-md rounded-tr-md shadow-md"
+            className="min-h-auto min-w-auto text-lg flex flex-col gap-4 absolute mt-3 left-4 bg-[#CCCCCC] dark:bg-[#222222] p-4 rounded-b-md rounded-tr-md shadow-md"
           >
             {navbar}
           </motion.ul>

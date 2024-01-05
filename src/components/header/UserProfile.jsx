@@ -66,19 +66,19 @@ const UserProfile = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.3 }}
-          className="absolute right-0 mt-2 bg-[#CCCCCC] dark:bg-[#333333] dark:text-white rounded shadow-md text-gray-800"
+          className="absolute right-0 mt-3 bg-[#CCCCCC] dark:bg-[#222222] dark:text-white rounded shadow-md text-gray-800"
         >
           {/* Dropdown content goes here */}
-          <ul className=" py-2 px-3">
-            <li className="flex items-center gap-2 hover:bg-gray-200 cursor-pointer dark:hover:bg-black dark:hover:text-white">
+          <ul className="text-xl md:text-base py-2 px-3 flex flex-col gap-4">
+            <li className="flex items-center gap-2 cursor-pointer dark:hover:text-cyan-200">
               <HiOutlineUser className="text-xl" />
               Profile
             </li>
-            <li className="flex items-center gap-2 hover:bg-gray-200 cursor-pointer dark:hover:bg-black dark:hover:text-white">
+            <li className="flex items-center gap-2 cursor-pointer dark:hover:text-cyan-200">
               <HiOutlineCog8Tooth className="text-xl" />
               Settings
             </li>
-            <li className="flex items-center gap-2  hover:bg-gray-200 cursor-pointer dark:hover:bg-black dark:hover:text-white">
+            <li className="flex items-center gap-2  cursor-pointer dark:hover:text-cyan-200">
               <HiOutlineArrowRightOnRectangle className="text-xl" />
               Logout
             </li>
