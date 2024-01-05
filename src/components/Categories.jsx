@@ -16,7 +16,7 @@ function Categories() {
   return (
     <div className="px-3 relative inline-block text-left mt-3">
       <span
-        className="cursor-pointer bg-[#CCCCCC] dark:bg-[#333333] w-28 md:w-36 lg:w-60 justify-between flex flex-row gap-1 rounded-full items-center px-auto shadow-md shadow-[#B3B3B3] dark:shadow-[#222222] "
+        className="cursor-pointer bg-[#CCCCCC] dark:bg-[#333333] hover:bg-[#f5f5f5] dark:hover:bg-[#555555] transition-all ease-in-out duration-200 w-28 md:w-36 lg:w-60 justify-between flex flex-row gap-1 rounded-full items-center px-auto shadow-md shadow-[#B3B3B3] dark:shadow-[#222222] "
         onClick={toggleDropdown}
       >
         <p className="text-lg mr-auto ml-2 dark:text-white">Category</p>
@@ -35,16 +35,16 @@ function Categories() {
         >
           <div className="py-1 dark:text-white">
             {/* Add your filter options here */}
-            <motion.button className="block w-full px-4 py-2 text-left text-sm hover:bg-[#555555]">
+            <motion.button className="block w-full px-4 py-2 text-left text-sm hover:bg-[#f5f5f5] dark:hover:bg-[#555555]">
               Category 1
             </motion.button>
-            <motion.button className="block w-full px-4 py-2 text-left text-sm hover:bg-[#555555]">
+            <motion.button className="block w-full px-4 py-2 text-left text-sm hover:bg-[#f5f5f5] dark:hover:bg-[#555555]">
               Category 2
             </motion.button>
-            <motion.button className="block w-full px-4 py-2 text-left text-sm hover:bg-[#555555]">
+            <motion.button className="block w-full px-4 py-2 text-left text-sm hover:bg-[#f5f5f5] dark:hover:bg-[#555555]">
               Category 3
             </motion.button>
-            <motion.button className="block w-full px-4 py-2 text-left text-sm hover:bg-[#555555]">
+            <motion.button className="block w-full px-4 py-2 text-left text-sm hover:bg-[#f5f5f5] dark:hover:bg-[#555555]">
               Category 4
             </motion.button>
             {/* Add more options as needed */}

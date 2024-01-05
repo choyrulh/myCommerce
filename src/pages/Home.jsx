@@ -2,6 +2,7 @@ import Aside from "../fragments/Aside";
 import CardContainer from "../fragments/CardContainer";
 import Filter from "./../fragments/Filter";
 import Hero from "./../components/Hero";
+import { Footer } from "../fragments/Footer";
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
           <CardContainer />
         </div>
       </div>
+      <Footer />
     </>
   );
 }

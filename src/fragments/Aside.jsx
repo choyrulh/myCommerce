@@ -2,6 +2,7 @@ import DarkModeToggle from "./../components/header/DarkModeToggle";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { HiMiniArrowDown } from "react-icons/hi2";
+import { Link } from "react-router-dom";
 function Aside() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -58,9 +59,17 @@ function Aside() {
             </motion.ul>
           )}
 
-          <h1 className="dark:text-white">Settings</h1>
+          <Link to="/settings" className="dark:text-white">
+            Settings
+          </Link>
           <hr className="border-gray-300 my-2" />
-          <h1 className="dark:text-white">Wishlist</h1>
+          <Link
+            to="/wishlist"
+            className="dark:text-white w-full flex flex-row  items-center"
+          >
+            <p className="mr-auto">Wishlist</p>
+            <p className="text-gray-400 ml-auto">(0)</p>
+          </Link>
           <hr className="border-gray-300 my-2" />
           <DarkModeToggle />
           <hr className="border-gray-300 my-2" />
