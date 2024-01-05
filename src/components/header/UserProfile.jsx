@@ -7,7 +7,6 @@ import {
   HiOutlineUser,
   HiUserCircle,
 } from "react-icons/hi2";
-import DarkModeToggle from "./DarkModeToggle";
 
 const UserProfile = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -67,7 +66,7 @@ const UserProfile = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.3 }}
-          className="absolute right-0 mt-2 bg-white dark:bg-slate-950 dark:text-white rounded shadow-md text-gray-800"
+          className="absolute right-0 mt-2 bg-[#CCCCCC] dark:bg-[#333333] dark:text-white rounded shadow-md text-gray-800"
         >
           {/* Dropdown content goes here */}
           <ul className=" py-2 px-3">
@@ -82,9 +81,6 @@ const UserProfile = () => {
             <li className="flex items-center gap-2  hover:bg-gray-200 cursor-pointer dark:hover:bg-black dark:hover:text-white">
               <HiOutlineArrowRightOnRectangle className="text-xl" />
               Logout
-            </li>
-            <li>
-              <DarkModeToggle />
             </li>
           </ul>
         </motion.div>

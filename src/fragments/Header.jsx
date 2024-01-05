@@ -61,7 +61,9 @@ function Header() {
     <NavLink
       to={to}
       onClick={handleClickWindow}
-      className={({ isActive }) => (isActive ? "text-cyan-500" : undefined)}
+      className={({ isActive }) =>
+        isActive ? "dark:text-cyan-500 text-cyan-600" : undefined
+      }
     >
       <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 1.0 }}>
         {children}
@@ -86,14 +88,16 @@ function Header() {
       initial={{ opacity: 1, y: 0 }}
       animate={controls}
       transition={{ duration: 0.5 }}
-      className="bg-slate-600 w-full h-min mx-auto text-white flex flex-row justify-between items-center p-2 sticky top-0 z-10"
+      className="bg-[#CCCCCC] dark:bg-[#333333] w-full h-min mx-auto dark:text-white  flex flex-row justify-between items-center p-2 sticky top-0 z-10"
     >
       <Link
         to="/"
         className="hidden md:flex flex-row justify-center items-center gap-2"
       >
         <img src={logo} alt="logo" className=" w-10 h-10" />
-        <h1 className="text-2xl">TokoKita</h1>
+        <h1 className="text-2xl flex">
+          Toko<p className="font-bold">Kita</p>
+        </h1>
       </Link>
       <span
         className={`${

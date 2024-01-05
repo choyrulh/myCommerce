@@ -19,7 +19,7 @@ const CardProduct = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden transform hover:scale-105 transition-transform duration-300"
+        className="w-full max-w-sm bg-[#E0E0E0] border border-gray-200 rounded-lg shadow-md shadow-[#B3B3B3] dark:shadow-[#333333] dark:bg-gray-800 dark:border-gray-700 overflow-hidden transform hover:scale-105 transition-transform duration-300"
       >
         <motion.img
           className="w-full h-48 object-cover rounded-t-lg"
@@ -41,7 +41,7 @@ const CardProduct = () => {
                 isAddingToCart
                   ? "bg-gray-500 cursor-not-allowed"
                   : "bg-blue-500 hover:bg-blue-600"
-              } text-white px-4 py-2 rounded-full`}
+              } text-white px-1 sm:px-4 py-0 sm:py-2 rounded-full`}
               disabled={isAddingToCart}
               whileTap={{ scale: 0.95 }}
               onClick={handleAddToCart}

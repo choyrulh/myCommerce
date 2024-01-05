@@ -9,7 +9,7 @@ function Home() {
     <>
       <div className="flex flex-col md:flex-row">
         <Aside />
-        <div className="w-full md:w-4/5 ml-auto">
+        <div className="w-full md:w-11/12 ml-auto ">
           <Banner />
           <Filter />
           <CardContainer />

@@ -17,10 +17,10 @@ const DarkModeToggle = () => {
 
   return (
     <motion.div
-      className="flex items-center gap-2 cursor-pointer transition duration-300 ease-in-out"
+      className="flex flex-row-reverse items-center gap-2 cursor-pointer transition duration-300 ease-in-out"
       onClick={() => handleChangeTheme(theme === "light" ? "dark" : "light")}
     >
-      <motion.div
+      <motion.span
         variants={iconVariants}
         initial="light"
         animate={theme}
@@ -31,8 +31,10 @@ const DarkModeToggle = () => {
         ) : (
           <HiOutlineSun className="text-yellow-500 text-xl" />
         )}
-      </motion.div>
-      {theme === "light" ? "Dark" : "Light"}
+      </motion.span>
+      <p className="dark:text-white mr-auto">
+        {theme === "light" ? "Dark" : "Light"}
+      </p>
     </motion.div>
   );
 };
