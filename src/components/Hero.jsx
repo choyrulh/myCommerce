@@ -10,10 +10,10 @@ import { motion } from "framer-motion";
 function HeroSection() {
   return (
     <motion.section
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
-      className=" shadow-md shadow-[#B3B3B3] relative h-80 rounded-md bg-transparent dark:bg-gradient-to-br mt-3 from-gray-800 to-purple-900 overflow-hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className=" shadow-md shadow-[#B3B3B3] dark:shadow-[#222222] relative h-80 rounded-md bg-transparent dark:bg-gradient-to-br mt-3 from-gray-800 to-purple-900 overflow-hidden"
     >
       <ul className="absolute inset-0 flex flex-row items-center">
         <li className="size-48 md:w-1/6 w-full translate-x-4 translate-y-5 rotate-45">
@@ -59,16 +59,14 @@ function HeroSection() {
           />
         </li>
       </ul>
-
-      <div className="absolute inset-0 bg-gray-400 dark:bg-black opacity-50"></div>
-
+      <div className="hidden dark:block absolute inset-0 bg-gray-400 dark:bg-black opacity-50" />
       <div className="absolute inset-0 flex items-center justify-center text-white">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Special Offer!</h1>
           <p className="text-lg mb-8">Discover our amazing product.</p>
           <Link
             to={"/product"}
-            className="bg-yellow-500 text-white px-6 py-3 rounded-full"
+            className="bg-yellow-500 hover:bg-yellow-600 transition-all ease-in-out duration-200 text-white px-6 py-3 rounded-full"
           >
             Shop Now
           </Link>

@@ -1,4 +1,4 @@
-import Categories from "../components/Categories";
+// import Categories from "../components/Categories";
 import FilterBy from "../components/FilterBy";
 import { motion } from "framer-motion";
 
@@ -15,8 +15,8 @@ function Filter() {
       animate="visible"
       className="flex flex-row md:flex-row gap-3"
     >
-      <FilterBy />
-      <Categories />
+      <FilterBy filterName="Filter" />
+      <FilterBy filterName="Categories" />
     </motion.div>
   );
 }

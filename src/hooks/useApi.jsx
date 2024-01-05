@@ -1,7 +1,8 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { useQuery } from "@tanstack/react-query";
+import { useGetData } from "../Service/api";
 
-export const store = configureStore({
-  reducer: {
-    // Add the generated reducer as a specific top-level slice
-  },
-});
+export const useApi = () => {
+  const { data: isLoading, error, data } = useQuery(["data"], useGetData);
+
+  return { isLoading, error, data };
+};

@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
+import { useRef } from "react";
 
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
 
 const SearchBar = () => {
+  const searchRef = useRef(null);
   return (
     <span className="hidden sm:hidden md:block">
       <motion.div
@@ -13,6 +15,7 @@ const SearchBar = () => {
       >
         <HiOutlineMagnifyingGlass className="h-5 w-5 text-gray-500 mr-2" />
         <input
+          ref={searchRef}
           type="text"
           placeholder="Search..."
           className="outline-none bg-transparent"

@@ -1,9 +1,14 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { HiHeart, HiOutlineHeart } from "react-icons/hi2";
+import { Link } from "react-router-dom";
 
 const CardProduct = () => {
   const [isAddingToCart, setIsAddingToCart] = useState(false);
-
+  const [isAddingToWhistlist, setIsAddingToWhistlist] = useState(false);
+  const handleClickWindow = () => {
+    window.scrollTo(0, 0);
+  };
   const handleAddToCart = () => {
     setIsAddingToCart(true);
     // You can add your actual "Add to Cart" logic here
@@ -11,6 +16,10 @@ const CardProduct = () => {
     setTimeout(() => {
       setIsAddingToCart(false);
     }, 1000); // Simulating an asynchronous action
+  };
+
+  const handleAddToWhistlist = () => {
+    setIsAddingToWhistlist(!isAddingToWhistlist);
   };
 
   return (
@@ -21,13 +30,16 @@ const CardProduct = () => {
         transition={{ duration: 0.5 }}
         className="w-full max-w-sm bg-[#E0E0E0] border border-gray-200 rounded-lg shadow-md shadow-[#B3B3B3] dark:shadow-[#333333] dark:bg-gray-800 dark:border-gray-700 overflow-hidden transform hover:scale-105 transition-transform duration-300"
       >
-        <motion.img
-          className="w-full h-48 object-cover rounded-t-lg"
-          src="https://plus.unsplash.com/premium_photo-1681666713728-9ed75e148617?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="product image"
-          whileHover={{ scale: 1.1 }}
-          transition={{ duration: 1.5 }}
-        />
+        <Link to={`/detail/1`} onClick={handleClickWindow}>
+          <motion.img
+            className="w-full h-48 object-cover rounded-t-lg"
+            src="https://plus.unsplash.com/premium_photo-1681666713728-9ed75e148617?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="product image"
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 1.5 }}
+          />
+        </Link>
+
         <div className="p-2">
           <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
             Macbook Air
@@ -35,6 +47,16 @@ const CardProduct = () => {
           <div className=" flex flex-row justify-between">
             <div className="flex items-center mb-2">
               <span className="text-yellow-500">★ ★ ★ ★ ☆</span>
+              <button
+                onClick={handleAddToWhistlist}
+                className="text-gray-500 ml-2 h-4 w-4 dark:text-white cursor-pointer"
+              >
+                {isAddingToWhistlist ? (
+                  <HiHeart className="text-red-500" />
+                ) : (
+                  <HiOutlineHeart />
+                )}
+              </button>
             </div>
             <motion.button
               className={`${
