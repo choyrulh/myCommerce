@@ -65,7 +65,7 @@ function HeroSection() {
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-transparent bg-clip-text">
             Special Offer!
           </h1>
-          <p className="text-lg mb-8 dark:text-white">
+          <p className="text-lg mb-8 text-white">
             Discover our amazing product.
           </p>
           <Link

@@ -4,6 +4,7 @@ import Sepatu from "../assets/Sepatu1.png";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
+import { Fragment } from "react";
 
 const products = [
   {
@@ -54,7 +55,7 @@ function HeroProduct() {
       {products.map(
         (products, index) =>
           index < 1 && (
-            <>
+            <Fragment key={products.id}>
               <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
                 <div className="max-w-lg lg:mx-12 lg:order-2">
                   <motion.h1
@@ -94,7 +95,7 @@ function HeroProduct() {
                 src={products.img}
                 alt={products.name}
               />
-            </>
+            </Fragment>
           )
       )}
     </section>

@@ -1,14 +1,29 @@
 import DarkModeToggle from "./../components/header/DarkModeToggle";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { HiBars3, HiMiniArrowDown, HiMiniArrowLeft } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 function Aside() {
   const controls = useAnimation();
+  const outsideRef = useRef(null);
   const [isOpenSideBar, setIsOpenSideBar] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
 
+  useEffect(() => {
+    let handler = (event) => {
+      if (outsideRef.current && !outsideRef.current.contains(event.target)) {
+        setIsOpen(false);
+        setIsOpenSideBar(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  }, [outsideRef]);
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
@@ -68,7 +83,11 @@ function Aside() {
           <HiBars3 onClick={toggleSidebar} />
         )}
       </motion.button>
-      <aside
+      <motion.aside
+        initial={{ opacity: 0, x: -20 }}
+        animate={controls}
+        transition={{ duration: 0.3 }}
+        ref={outsideRef}
         className={`${
           isOpenSideBar ? "block" : "hidden"
         } mt-4 ml-6 z-10 fixed ${
@@ -128,7 +147,7 @@ function Aside() {
             <hr className="border-gray-300 my-2" />
           </sidebar>
         )}
-      </aside>
+      </motion.aside>
     </>
   );
 }

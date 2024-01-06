@@ -1,11 +1,25 @@
 import { HiAdjustmentsVertical } from "react-icons/hi2";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { PropTypes } from "prop-types";
 
 function FilterBy({ filterName }) {
   const [isOpen, setIsOpen] = useState(false);
+  const outsideRef = useRef(null);
 
+  useEffect(() => {
+    let handler = (event) => {
+      if (outsideRef.current && !outsideRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  }, [outsideRef]);
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -47,6 +61,7 @@ function FilterBy({ filterName }) {
 
       {isOpen && (
         <motion.div
+          ref={outsideRef}
           className="z-10 origin-top-right absolute left-3 mt-2 w-60 rounded-md shadow-lg bg-[#f5f5f5] dark:bg-[#333333] ring-1 ring-black ring-opacity-5 focus:outline-none"
           initial="hidden"
           animate="visible"

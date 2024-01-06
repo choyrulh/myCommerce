@@ -27,7 +27,7 @@ const UserProfile = () => {
     return () => {
       document.removeEventListener("mousedown", handler);
     };
-  }, [isDropdownOpen]);
+  }, [outsideRef]);
 
   const arrowVariants = {
     initial: { rotate: 0, y: 0 },
@@ -39,7 +39,6 @@ const UserProfile = () => {
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      ref={outsideRef}
       className="relative mr-3"
     >
       <div
