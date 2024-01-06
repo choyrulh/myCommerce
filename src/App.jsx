@@ -1,5 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-
+import "./App.css";
 import { ThemeContextProvider } from "./hooks/DarkModeContext";
 import Home from "./pages/Home";
 import RootLayout from "./pages/Root";

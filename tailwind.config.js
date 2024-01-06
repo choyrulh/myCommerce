@@ -3,7 +3,11 @@ export default {
   darkMode: "class",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      width: {
+        "1.5/12": "12.5%", // Sesuaikan dengan kebutuhan desain Anda
+      },
+    },
   },
   plugins: [],
 };

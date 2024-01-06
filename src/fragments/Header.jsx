@@ -86,7 +86,7 @@ function Header() {
       initial={{ opacity: 1, y: 0 }}
       animate={controls}
       transition={{ duration: 0.5 }}
-      className="bg-[#CCCCCC] dark:bg-[#333333] w-full h-min mx-auto dark:text-white  flex flex-row justify-between items-center p-2 sticky top-0 z-10"
+      className="bg-[#CCCCCC] dark:bg-[#333333] w-full h-min mx-auto dark:text-white flex flex-row justify-between items-center py-2 md:px-7 sticky top-0 z-10"
     >
       <Link
         to="/"
