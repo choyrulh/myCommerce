@@ -8,9 +8,9 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import LoadingPage from "./pages/Loader";
-import Product from "./pages/Product";
 import Settings from "./pages/Settings";
 import Wishlist from "./pages/Wishlist";
+import ProductPage from "./pages/ProductPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -22,7 +22,7 @@ function App() {
       children: [
         { path: "/", element: <Home /> },
         { path: "/cart", element: <Cart /> },
-        { path: "/product", element: <Product /> },
+        { path: "/product", element: <ProductPage /> },
         { path: "/about", element: <About /> },
         { path: "/contact", element: <Contact /> },
         { path: "/settings", element: <Settings /> },

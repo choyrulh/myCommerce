@@ -62,8 +62,12 @@ function HeroSection() {
       <div className="hidden dark:block absolute inset-0 bg-gray-400 dark:bg-black opacity-50" />
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Special Offer!</h1>
-          <p className="text-lg mb-8">Discover our amazing product.</p>
+          <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-transparent bg-clip-text">
+            Special Offer!
+          </h1>
+          <p className="text-lg mb-8 dark:text-white">
+            Discover our amazing product.
+          </p>
           <Link
             to={"/product"}
             className="bg-yellow-500 hover:bg-yellow-600 transition-all ease-in-out duration-200 text-white px-6 py-3 rounded-full"

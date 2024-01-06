@@ -71,7 +71,7 @@ function Header() {
   const navbar = (
     <>
       <NavbarLink to="/">Home</NavbarLink>
-      <NavbarLink to="/About">Product</NavbarLink>
+      <NavbarLink to="/product">Product</NavbarLink>
       <NavbarLink to="/Contact">Contact</NavbarLink>
     </>
   );
