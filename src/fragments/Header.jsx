@@ -94,7 +94,7 @@ function Header() {
       >
         <img src={logo} alt="logo" className=" w-10 h-10" />
         <h1 className="text-2xl flex ">
-          Toko
+          toko
           <p className="font-bold bg-gradient-to-r from-[#EF5396] via-transparent to-[#25AAE1] text-transparent bg-clip-text">
             Kita
           </p>

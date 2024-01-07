@@ -1,7 +1,7 @@
 import DarkModeToggle from "./../components/header/DarkModeToggle";
 import { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { HiBars3, HiMiniArrowDown, HiMiniArrowLeft } from "react-icons/hi2";
+import { HiBars3, HiMiniArrowDown } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 function Aside() {
   const controls = useAnimation();
@@ -77,11 +77,7 @@ function Aside() {
         animate={controls}
         variants={buttonVariants}
       >
-        {isOpenSideBar ? (
-          <HiMiniArrowLeft onClick={toggleSidebar} />
-        ) : (
-          <HiBars3 onClick={toggleSidebar} />
-        )}
+        {isOpenSideBar ? null : <HiBars3 onClick={toggleSidebar} />}
       </motion.button>
       <motion.aside
         initial={{ opacity: 0, x: -20 }}
@@ -90,17 +86,17 @@ function Aside() {
         ref={outsideRef}
         className={`${
           isOpenSideBar ? "block" : "hidden"
-        } mt-4 ml-6 z-10 fixed ${
+        } mt-1 ml-6 z-10 fixed ${
           isOpenSideBar ? "w-1.5/12" : "w-0"
-        } h-screen mt-3 hidden md:block transition-all duration-300 pr-2 backdrop-blur-sm font-semibold`}
+        } h-screen mt-1 hidden md:block transition-all duration-300 pr-2 backdrop-blur-sm font-semibold`}
       >
         {isOpenSideBar && (
-          <sidebar className="p-2">
+          <sidebar className="w-full">
             <button
               onClick={toggleDropdown}
-              className="dark:text-white w-full flex flex-row  items-center"
+              className="dark:text-white w-full flex flex-row items-center"
             >
-              <p className="mr-auto">User</p>
+              <p className="mr-auto">Profile</p>
               <motion.span
                 variants={arrowVariants}
                 initial="initial"
@@ -114,31 +110,38 @@ function Aside() {
             <hr className="border-gray-300 my-2" />
             {isOpen && (
               <motion.ul
-                className="dark:text-white"
+                className="dark:text-white flex flex-col gap-2 px-2"
                 initial="closed"
                 animate={isOpen ? "open" : "closed"}
                 variants={menuVariants}
               >
-                <Link>
-                  <li>My Profile</li>
+                <Link className="hover:bg-[#CCCCCC] p-1 rounded-md transition-all ease-in-out duration-3000">
+                  <li>Profile</li>
                 </Link>
-                <Link>
+                <Link className="hover:bg-[#CCCCCC] p-1 rounded-md transition-all ease-in-out duration-3000">
                   <li>Account</li>
                 </Link>
-                <Link>
-                  <li>Logout</li>
+                <Link className="hover:bg-[#CCCCCC] p-1 rounded-md transition-all ease-in-out duration-3000">
+                  <li>Sign in</li>
+                </Link>
+                <Link className="hover:bg-[#CCCCCC] p-1 rounded-md transition-all ease-in-out duration-3000">
+                  <li>Sign up</li>
                 </Link>
                 <hr className="border-gray-300 my-2" />
               </motion.ul>
             )}
 
-            <Link to="/settings" className="dark:text-white">
-              Settings
+            <hr className="border-gray-300 my-2" />
+            <Link
+              to="/settings"
+              className="dark:text-white w-full flex flex-row items-center hover:bg-[#CCCCCC] rounded-md transition-all ease-in-out duration-3000"
+            >
+              <p className="mr-auto">Settings</p>
             </Link>
             <hr className="border-gray-300 my-2" />
             <Link
-              to="/wishlist"
-              className="dark:text-white w-full flex flex-row  items-center"
+              to="/Filter"
+              className="dark:text-white w-full flex flex-row items-center hover:bg-[#CCCCCC] rounded-md transition-all ease-in-out duration-3000"
             >
               <p className="mr-auto">Filter</p>
             </Link>
