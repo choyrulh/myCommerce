@@ -4,7 +4,7 @@ import { HiHeart, HiOutlineHeart } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
 
-const CardProduct = ({ images, title, price }) => {
+const CardProduct = ({ images, title, price, itemId }) => {
   const [isAddingToCart, setIsAddingToCart] = useState(false);
   const [isAddingToWhistlist, setIsAddingToWhistlist] = useState(false);
   const handleClickWindow = () => {
@@ -31,7 +31,7 @@ const CardProduct = ({ images, title, price }) => {
         transition={{ duration: 0.5 }}
         className="w-full max-w-sm bg-[#E0E0E0] border border-gray-200 rounded-lg shadow-md shadow-[#B3B3B3] dark:shadow-[#333333] dark:bg-gray-800 dark:border-gray-700 overflow-hidden transform hover:scale-105 transition-transform duration-300"
       >
-        <Link to={`/detail/1`} onClick={handleClickWindow}>
+        <Link to={`/detail/${itemId}`} onClick={handleClickWindow}>
           <motion.img
             className="w-full h-48 object-center rounded-t-lg"
             src={images}
@@ -82,6 +82,7 @@ CardProduct.propTypes = {
   images: PropTypes.string,
   title: PropTypes.string,
   price: PropTypes.number,
+  itemId: PropTypes.object,
 };
 
 export default CardProduct;

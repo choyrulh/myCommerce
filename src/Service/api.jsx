@@ -14,3 +14,24 @@ export const getAllProducts = async () => {
     console.log(error);
   }
 };
+// search all product
+export const getAllCategories = async () => {
+  try {
+    const { data } = await axiosCreate.get(`products/categories`);
+    const resData = data.products;
+    console.log(resData);
+    return resData;
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const getAllSmartphones = async () => {
+  try {
+    const { data } = await axiosCreate.get(`products/category/smartphones`);
+    const resData = data.products;
+    console.log(resData);
+    return resData;
+  } catch (error) {
+    console.log(error);
+  }
+};

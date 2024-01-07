@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { PropTypes } from "prop-types";
 
-function FilterBy({ filterName }) {
+function FilterBy({ filterName, list }) {
   const [isOpen, setIsOpen] = useState(false);
   const outsideRef = useRef(null);
 
@@ -29,24 +29,6 @@ function FilterBy({ filterName }) {
     visible: { opacity: 1, y: 0 },
   };
 
-  const list = [
-    {
-      id: 1,
-      name: "Price",
-    },
-    {
-      id: 2,
-      name: "Rating",
-    },
-    {
-      id: 3,
-      name: "Discount",
-    },
-    {
-      id: 4,
-      name: "Popularity",
-    },
-  ];
   return (
     <div className="px-3 relative inline-block text-left mt-3">
       <span
@@ -75,7 +57,7 @@ function FilterBy({ filterName }) {
                 key={list.id}
                 className="block w-full px-4 py-2 text-left text-sm hover:bg-[#CCCCCC] dark:hover:bg-[#555555]"
               >
-                {list.name}
+                {list.title}
               </motion.button>
             ))}
           </div>
@@ -87,6 +69,7 @@ function FilterBy({ filterName }) {
 
 FilterBy.propTypes = {
   filterName: PropTypes.string.isRequired,
+  list: PropTypes.array.isRequired,
 };
 
 export default FilterBy;

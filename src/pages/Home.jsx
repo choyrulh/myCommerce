@@ -7,7 +7,7 @@ import CardProduct from "./../components/CardProduct";
 import { useFetch } from "./../hooks/useFetch";
 
 function Home() {
-  const { isFetching, fetchedData, error } = useFetch(getAllProducts, []);
+  const {  fetchedData } = useFetch(getAllProducts, []);
   return (
     <div className="w-full ml-auto ">
       <HeroProduct />
@@ -23,6 +23,7 @@ function Home() {
                 title={product.title}
                 images={product.thumbnail}
                 price={product.price}
+                itemId={product.id}
               />
             )
         )}

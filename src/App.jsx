@@ -12,6 +12,7 @@ import Settings from "./pages/Settings";
 import Wishlist from "./pages/Wishlist";
 import ProductPage from "./pages/ProductPage";
 import CategoriesPage from "./pages/CategoriesPage";
+import DetailCard from "./pages/DetailCard";
 
 function App() {
   const router = createBrowserRouter([
@@ -28,7 +29,8 @@ function App() {
         { path: "/contact", element: <Contact /> },
         { path: "/settings", element: <Settings /> },
         { path: "/wishlist", element: <Wishlist /> },
-        { path: "categories/", element: <CategoriesPage /> },
+        { path: "/product/:id", element: <DetailCard /> },
+        { path: "/categories", element: <CategoriesPage /> },
       ],
     },
   ]);
