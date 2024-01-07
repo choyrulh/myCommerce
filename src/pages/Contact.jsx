@@ -17,7 +17,7 @@ function Contact() {
           />
         </svg>
       ),
-      contact: "Support@example.com",
+      contact: "choyrulirul9@gmail.com",
     },
     {
       icon: (
@@ -36,7 +36,7 @@ function Contact() {
           />
         </svg>
       ),
-      contact: "+1 (555) 000-000",
+      contact: "+6282332619095",
     },
     {
       icon: (
@@ -60,7 +60,7 @@ function Contact() {
           />
         </svg>
       ),
-      contact: "Mountain View, California, United State.",
+      contact: "Pati, Jawa Tengah, Indonesia",
     },
   ];
 

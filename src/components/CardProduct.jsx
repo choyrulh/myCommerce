@@ -2,8 +2,9 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { HiHeart, HiOutlineHeart } from "react-icons/hi2";
 import { Link } from "react-router-dom";
+import { PropTypes } from "prop-types";
 
-const CardProduct = () => {
+const CardProduct = ({ images, title, price }) => {
   const [isAddingToCart, setIsAddingToCart] = useState(false);
   const [isAddingToWhistlist, setIsAddingToWhistlist] = useState(false);
   const handleClickWindow = () => {
@@ -32,17 +33,17 @@ const CardProduct = () => {
       >
         <Link to={`/detail/1`} onClick={handleClickWindow}>
           <motion.img
-            className="w-full h-48 object-cover rounded-t-lg"
-            src="https://plus.unsplash.com/premium_photo-1681666713728-9ed75e148617?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            className="w-full h-48 object-center rounded-t-lg"
+            src={images}
             alt="product image"
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 1.5 }}
           />
         </Link>
 
-        <div className="p-2 relative md:flex flex-col">
+        <div className="p-2">
           <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-            Macbook Air
+            {title}
           </h5>
           <div className=" flex flex-row justify-between">
             <div className="flex flex-col md:flex-row items-start md:items-center mb-2">
@@ -63,18 +64,24 @@ const CardProduct = () => {
                 isAddingToCart
                   ? "bg-gray-500 cursor-not-allowed sm:px-1"
                   : "bg-blue-500 hover:bg-blue-600"
-              } text-white px-2 py-1 sm:px-4 sm:py-2 rounded-full absolute bottom-2 right-2 md:flex md-bottom-0 `}
+              } text-white px-2 py-1 sm:px-4 sm:py-2 rounded-full text-sm md:flex md-bottom-0 `}
               disabled={isAddingToCart}
               whileTap={{ scale: 0.95 }}
               onClick={handleAddToCart}
             >
-              {isAddingToCart ? "Adding to cart .." : "$100.00"}
+              {isAddingToCart ? "Adding to cart .." : `$${price}`}
             </motion.button>
           </div>
         </div>
       </motion.li>
     </>
   );
+};
+
+CardProduct.propTypes = {
+  images: PropTypes.string,
+  title: PropTypes.string,
+  price: PropTypes.number,
 };
 
 export default CardProduct;

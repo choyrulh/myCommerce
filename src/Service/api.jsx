@@ -8,7 +8,8 @@ const axiosCreate = axios.create({
 export const getAllProducts = async () => {
   try {
     const { data } = await axiosCreate.get(`products`);
-    return data;
+    const resData = data.products;
+    return resData;
   } catch (error) {
     console.log(error);
   }

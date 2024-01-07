@@ -1,8 +1,29 @@
-import { useQuery } from "@tanstack/react-query";
-import { useGetData } from "../Service/api";
+import { useEffect, useState } from "react";
 
-export const useApi = () => {
-  const { data: isLoading, error, data } = useQuery(["data"], useGetData);
+export function useFetch(fetchFn, initialValue) {
+  const [isFetching, setIsFetching] = useState(false);
+  const [error, setError] = useState(null);
+  const [fetchedData, setFetchedData] = useState(initialValue);
 
-  return { isLoading, error, data };
-};
+  useEffect(() => {
+    async function fetchData() {
+      setIsFetching(true);
+      try {
+        const data = await fetchFn();
+        setFetchedData(data);
+      } catch (error) {
+        setError({ message: error.message || "Failed to fetch data." });
+      }
+      setIsFetching(false);
+    }
+
+    fetchData();
+  }, [fetchFn]);
+
+  return {
+    setFetchedData,
+    isFetching,
+    fetchedData,
+    error,
+  };
+}
