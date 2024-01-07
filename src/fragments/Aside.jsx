@@ -107,7 +107,7 @@ function Aside() {
                 <HiMiniArrowDown className="ml-auto h-4 w-4" />
               </motion.span>
             </button>
-            <hr className="border-gray-300 my-2" />
+            {isOpen && <hr className="border-gray-300 my-2" />}
             {isOpen && (
               <motion.ul
                 className="dark:text-white flex flex-col gap-2 px-2"
@@ -115,33 +115,32 @@ function Aside() {
                 animate={isOpen ? "open" : "closed"}
                 variants={menuVariants}
               >
-                <Link className="hover:bg-[#CCCCCC] p-1 rounded-md transition-all ease-in-out duration-3000">
+                <Link className="hover:bg-[#CCCCCC] hover:text-black p-1 rounded-md transition-all ease-in-out duration-3000">
                   <li>Profile</li>
                 </Link>
-                <Link className="hover:bg-[#CCCCCC] p-1 rounded-md transition-all ease-in-out duration-3000">
+                <Link className="hover:bg-[#CCCCCC] hover:text-black p-1 rounded-md transition-all ease-in-out duration-3000">
                   <li>Account</li>
                 </Link>
-                <Link className="hover:bg-[#CCCCCC] p-1 rounded-md transition-all ease-in-out duration-3000">
+                <Link className="hover:bg-[#CCCCCC] hover:text-black p-1 rounded-md transition-all ease-in-out duration-3000">
                   <li>Sign in</li>
                 </Link>
-                <Link className="hover:bg-[#CCCCCC] p-1 rounded-md transition-all ease-in-out duration-3000">
+                <Link className="hover:bg-[#CCCCCC] hover:text-black p-1 rounded-md transition-all ease-in-out duration-3000">
                   <li>Sign up</li>
                 </Link>
-                <hr className="border-gray-300 my-2" />
               </motion.ul>
             )}
 
             <hr className="border-gray-300 my-2" />
             <Link
               to="/settings"
-              className="dark:text-white w-full flex flex-row items-center hover:bg-[#CCCCCC] rounded-md transition-all ease-in-out duration-3000"
+              className="dark:text-white w-full flex flex-row items-center hover:bg-[#CCCCCC] hover:text-black rounded-md transition-all ease-in-out duration-3000"
             >
               <p className="mr-auto">Settings</p>
             </Link>
             <hr className="border-gray-300 my-2" />
             <Link
               to="/Filter"
-              className="dark:text-white w-full flex flex-row items-center hover:bg-[#CCCCCC] rounded-md transition-all ease-in-out duration-3000"
+              className="dark:text-white w-full flex flex-row items-center hover:bg-[#CCCCCC] hover:text-black rounded-md transition-all ease-in-out duration-3000"
             >
               <p className="mr-auto">Filter</p>
             </Link>

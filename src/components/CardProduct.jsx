@@ -40,16 +40,16 @@ const CardProduct = () => {
           />
         </Link>
 
-        <div className="p-2">
+        <div className="p-2 relative md:flex flex-col">
           <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
             Macbook Air
           </h5>
           <div className=" flex flex-row justify-between">
-            <div className="flex items-center mb-2">
+            <div className="flex flex-col md:flex-row items-start md:items-center mb-2">
               <span className="text-yellow-500">★ ★ ★ ★ ☆</span>
               <button
                 onClick={handleAddToWhistlist}
-                className="text-gray-500 ml-2 h-4 w-4 dark:text-white cursor-pointer"
+                className="text-gray-500 md:ml-2 text-xl md:text-base dark:text-white cursor-pointer"
               >
                 {isAddingToWhistlist ? (
                   <HiHeart className="text-red-500" />
@@ -61,14 +61,14 @@ const CardProduct = () => {
             <motion.button
               className={`${
                 isAddingToCart
-                  ? "bg-gray-500 cursor-not-allowed"
+                  ? "bg-gray-500 cursor-not-allowed sm:px-1"
                   : "bg-blue-500 hover:bg-blue-600"
-              } text-white px-1 sm:px-4 py-0 sm:py-2 rounded-full`}
+              } text-white px-2 py-1 sm:px-4 sm:py-2 rounded-full absolute bottom-2 right-2 md:flex md-bottom-0 `}
               disabled={isAddingToCart}
               whileTap={{ scale: 0.95 }}
               onClick={handleAddToCart}
             >
-              {isAddingToCart ? "Adding to cart..." : "$100.00"}
+              {isAddingToCart ? "Adding to cart .." : "$100.00"}
             </motion.button>
           </div>
         </div>

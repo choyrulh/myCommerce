@@ -18,37 +18,37 @@ function CategoryFrag() {
       >
         <ul className="h-full flex flex-row items-center gap-2 justify-evenly dark:text-[#CCCCCC]">
           <Link to="/categories">
-            <li className="flex flex-col items-center gap-2 justify-evenly ">
+            <li className="flex flex-col items-center gap-2 justify-evenly hover:text-[#444444] dark:hover:text-white ">
               <HiSquares2X2 className="h-9 w-9 bg-white dark:bg-[#222222] rounded-full p-1 shadow-inner " />
               <h2>All Categories</h2>
             </li>
           </Link>
           <Link to="./categories/laptop">
-            <li className="flex flex-col items-center gap-2 justify-evenly">
+            <li className="flex flex-col items-center gap-2 justify-evenly hover:text-[#444444] dark:hover:text-white">
               <RiMacbookFill className="w-9 h-9 bg-white dark:bg-[#222222] rounded-full p-1 shadow-inner " />
               <h2>Laptop</h2>
             </li>
           </Link>
           <Link to="./categories/smartphone">
-            <li className="flex flex-col items-center gap-2 justify-evenly">
+            <li className="flex flex-col items-center gap-2 justify-evenly hover:text-[#444444] dark:hover:text-white">
               <GiSmartphone className="w-9 h-9 bg-white dark:bg-[#222222] rounded-full p-1 shadow-inner" />
               <h2>Smartphone</h2>
             </li>
           </Link>
           <Link to="./categories/clothes">
-            <li className="flex flex-col items-center gap-2 justify-evenly">
+            <li className="flex flex-col items-center gap-2 justify-evenly hover:text-[#444444] dark:hover:text-white">
               <GiClothes className=" w-9 h-9 bg-white dark:bg-[#222222] rounded-full p-1 shadow-inner" />
               <h2>Fashion</h2>
             </li>
           </Link>
           <Link to="./categories/groceries">
-            <li className="flex flex-col items-center gap-2 justify-evenly">
+            <li className="flex flex-col items-center gap-2 justify-evenly hover:text-[#444444] dark:hover:text-white">
               <GiShoppingBag className="w-9 h-9 bg-white dark:bg-[#222222] rounded-full p-1 shadow-inner" />
               <h2>Groceries</h2>
             </li>
           </Link>
           <Link to="./categories/watch">
-            <li className="flex flex-col items-center gap-2 justify-evenly">
+            <li className="flex flex-col items-center gap-2 justify-evenly hover:text-[#444444] dark:hover:text-white">
               <GiWatch
                 className="w-9 h-9 bg-white dark:bg-[#222222] rounded-full p-1
               shadow-inner"
@@ -57,7 +57,7 @@ function CategoryFrag() {
             </li>
           </Link>
           <Link to="./categories/sunglasses">
-            <li className="flex flex-col items-center gap-2 justify-evenly">
+            <li className="flex flex-col items-center gap-2 justify-evenly hover:text-[#444444] dark:hover:text-white">
               <GiSunglasses
                 className="w-9 h-9 bg-white dark:bg-[#222222]
               rounded-full p-1 shadow-inner"
@@ -66,7 +66,7 @@ function CategoryFrag() {
             </li>
           </Link>
           <Link to="./categories/furniture">
-            <li className="flex flex-col items-center gap-2 justify-evenly">
+            <li className="flex flex-col items-center gap-2 justify-evenly hover:text-[#444444] dark:hover:text-white">
               <GiSofa
                 className="w-9 h-9 bg-white dark:bg-[#222222]
               rounded-full p-1 shadow-inner"

@@ -17,10 +17,10 @@ const DarkModeToggle = () => {
 
   return (
     <motion.div
-      className="flex flex-row items-center gap-2 cursor-pointer transition duration-300 ease-in-out"
+      className="flex flex-row items-center gap-2 hover:bg-[#CCCCCC] dark:hover:text-black  cursor-pointer transition duration-300 ease-in-out rounded-md"
       onClick={() => handleChangeTheme(theme === "light" ? "dark" : "light")}
     >
-      <p className="dark:text-white mr-auto">
+      <p className="dark:text-white mr-auto ">
         {theme === "light" ? "Dark" : "Light"}
       </p>
       <motion.span
