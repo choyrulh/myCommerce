@@ -31,7 +31,7 @@ const CardProduct = ({ images, title, price, itemId }) => {
         transition={{ duration: 0.5 }}
         className="w-full max-w-sm bg-[#E0E0E0] border border-gray-200 rounded-lg shadow-md shadow-[#B3B3B3] dark:shadow-[#333333] dark:bg-gray-800 dark:border-gray-700 overflow-hidden transform hover:scale-105 transition-transform duration-300"
       >
-        <Link to={`/detail/${itemId}`} onClick={handleClickWindow}>
+        <Link to={`/products/${itemId}`} onClick={handleClickWindow}>
           <motion.img
             className="w-full h-48 object-center rounded-t-lg"
             src={images}
@@ -82,7 +82,7 @@ CardProduct.propTypes = {
   images: PropTypes.string,
   title: PropTypes.string,
   price: PropTypes.number,
-  itemId: PropTypes.object,
+  itemId: PropTypes.number,
 };
 
 export default CardProduct;

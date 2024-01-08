@@ -35,3 +35,33 @@ export const getAllSmartphones = async () => {
     console.log(error);
   }
 };
+
+// get search by query
+export const getSearchByQuery = async (query) => {
+  try {
+    const { data } = await axiosCreate.get(`products/search?q=${query}`);
+    const resData = data.products;
+    console.log(resData);
+    return resData;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+// get detail product by id
+export const getProductById = async (id) => {
+  const response = await axiosCreate.get(`products/${id}`);
+  return response.data;
+};
+
+// get product by category
+export const getProductByCategory = async (category) => {
+  const response = await axiosCreate.get(`products/category/${category}`);
+  return response.data;
+};
+
+// get product by query
+export const getProductByQuery = async (query) => {
+  const response = await axiosCreate.get(`products/search?q=${query}`);
+  return response.data;
+};

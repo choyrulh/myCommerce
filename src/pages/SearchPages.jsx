@@ -1,21 +1,21 @@
-import { useParams } from "react-router-dom";
-import { getProductById } from "../Service/api";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { getProductByQuery } from "../Service/api";
 
-function DetailCard() {
+function SearchPages() {
   const [product, setProduct] = useState({});
   const [isFetching, setIsFetching] = useState(false);
-  const params = useParams();
+  query = useParams();
 
   useEffect(() => {
     // Async function to fetch movie details from the API
     const fetchProductsDetail = async () => {
       try {
         setIsFetching(true);
-        const data = await getProductById(params.id);
+        const data = await getProductByQuery(query);
         setProduct(data);
       } catch (error) {
-        console.error("Error fetching movie detail:", error);
+        console.error("Error fetching search movie..:", error);
       } finally {
         setIsFetching(false);
       }
@@ -23,11 +23,10 @@ function DetailCard() {
 
     // Call the fetchMovieDetail function
     fetchProductsDetail();
-  }, [params.id]);
-
+  }, [query]);
+  console.log(isFetching);
   console.log(product);
-
-  return <div>{isFetching ? <p>Loading...</p> : <p>{product.title}</p>}</div>;
+  return <div>SearchPages</div>;
 }
 
-export default DetailCard;
+export default SearchPages;

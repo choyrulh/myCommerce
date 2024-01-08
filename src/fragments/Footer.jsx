@@ -28,7 +28,7 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="text-gray-500 px-4 py-5 max-w-full mx-auto md:px-8 dark:bg-[#111111]">
+    <footer className="text-gray-500 px-4 py-5 max-w-full mt-10 mx-auto md:px-8 dark:bg-[#111111]">
       <div className="max-w-lg sm:mx-auto sm:text-center dark:text-white">
         <img src={logo} className="size-20 sm:mx-auto" />
         <p className="leading-relaxed mt-2 text-[15px]">
