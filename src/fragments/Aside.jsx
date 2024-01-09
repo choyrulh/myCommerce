@@ -88,10 +88,10 @@ function Aside() {
           isOpenSideBar ? "block" : "hidden"
         } mt-1 ml-6 z-10 fixed ${
           isOpenSideBar ? "w-1.5/12" : "w-0"
-        } h-screen mt-1 hidden md:block transition-all duration-300 pr-2 backdrop-blur-sm font-semibold`}
+        } h-screen mt-1 transition-all duration-300 pr-2 backdrop-blur-sm font-semibold`}
       >
         {isOpenSideBar && (
-          <div className="w-full">
+          <div className="w-full block">
             <button
               onClick={toggleDropdown}
               className="dark:text-white w-full flex flex-row items-center"
