@@ -22,26 +22,36 @@ const cartSlice = createSlice({
         state.items.push({
           id: newItem.id,
           price: newItem.price,
-          quantitiy: 1,
+          quantity: 1,
           totalPrice: newItem.price,
           name: newItem.title,
           description: newItem.description,
           images: newItem.images,
         });
       } else {
-        existingItem.quantitiy++;
+        existingItem.quantity++;
         existingItem.totalPrice = existingItem.totalPrice + newItem.price;
       }
     },
+
+    addQuantityItem(state, action) {
+      const id = action.payload;
+      const existingItem = state.items.find((item) => item.id === id);
+      state.totalQuantity++;
+      state.changed = true;
+      existingItem.quantity++;
+      existingItem.totalPrice = existingItem.totalPrice + existingItem.price;
+    },
+
     removeItemFromCart(state, action) {
       const id = action.payload;
       const existingItem = state.items.find((item) => item.id === id);
       state.totalQuantity--;
       state.changed = true;
-      if (existingItem.quantitiy === 1) {
+      if (existingItem.quantity === 1) {
         state.items = state.items.filter((item) => item.id !== id);
       } else {
-        existingItem.quantitiy--;
+        existingItem.quantity--;
         existingItem.totalPrice = existingItem.totalPrice - existingItem.price;
       }
     },

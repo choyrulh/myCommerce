@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   HiMiniArrowSmallDown,
   HiOutlineArrowRightOnRectangle,
   HiOutlineCog8Tooth,
+  HiOutlineShoppingCart,
   HiOutlineUser,
   HiUserCircle,
 } from "react-icons/hi2";
@@ -77,6 +79,12 @@ const UserProfile = () => {
               <HiOutlineCog8Tooth className="text-xl" />
               Settings
             </li>
+            <Link to="/cart">
+              <li className="flex items-center gap-2 cursor-pointer dark:hover:text-cyan-200">
+                <HiOutlineShoppingCart className="text-xl " />
+                My Cart
+              </li>
+            </Link>
             <li className="flex items-center gap-2  cursor-pointer dark:hover:text-cyan-200">
               <HiOutlineArrowRightOnRectangle className="text-xl" />
               Logout
