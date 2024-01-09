@@ -3,16 +3,24 @@ import { useState } from "react";
 import { HiHeart, HiOutlineHeart } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
+import { useDispatch } from "react-redux";
+import { cartActions } from "./../store/cart/cartSlice";
 
 const CardProduct = ({ images, title, price, itemId }) => {
   const [isAddingToCart, setIsAddingToCart] = useState(false);
   const [isAddingToWhistlist, setIsAddingToWhistlist] = useState(false);
+  const dispatch = useDispatch();
+
   const handleClickWindow = () => {
     window.scrollTo(0, 0);
   };
   const handleAddToCart = () => {
     setIsAddingToCart(true);
     // You can add your actual "Add to Cart" logic here
+    dispatch(
+      cartActions.addNewItems({ id: itemId, title, price, images: images })
+    );
+    console.log("Added to cart:", itemId, title, price);
     // For example, make an API call or update the cart state
     setTimeout(() => {
       setIsAddingToCart(false);

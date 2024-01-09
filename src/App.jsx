@@ -30,9 +30,9 @@ function App() {
         { path: "/contact", element: <Contact /> },
         { path: "/settings", element: <Settings /> },
         { path: "/wishlist", element: <Wishlist /> },
-        { path: "/products/:id", element: <DetailCard /> },
         { path: "/categories", element: <CategoriesPage /> },
-        { path: "products/q=:query", element: <SearchPages /> },
+        { path: "/products/:id", element: <DetailCard /> },
+        { path: "/products/q=query", element: <SearchPages /> },
       ],
     },
   ]);

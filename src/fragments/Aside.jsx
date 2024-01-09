@@ -91,7 +91,7 @@ function Aside() {
         } h-screen mt-1 hidden md:block transition-all duration-300 pr-2 backdrop-blur-sm font-semibold`}
       >
         {isOpenSideBar && (
-          <sidebar className="w-full">
+          <div className="w-full">
             <button
               onClick={toggleDropdown}
               className="dark:text-white w-full flex flex-row items-center"
@@ -147,7 +147,7 @@ function Aside() {
             <hr className="border-gray-300 my-2" />
             <DarkModeToggle />
             <hr className="border-gray-300 my-2" />
-          </sidebar>
+          </div>
         )}
       </motion.aside>
     </>

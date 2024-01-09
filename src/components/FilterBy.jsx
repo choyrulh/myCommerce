@@ -35,7 +35,9 @@ function FilterBy({ filterName, list }) {
         className="cursor-pointer bg-[#f5f5f5] dark:bg-[#333333] hover:bg-[#CCCCCC] dark:hover:bg-[#555555] transition-all ease-in-out duration-200 w-28 md:w-36 lg:w-60 justify-between flex flex-row gap-1 rounded-full items-center px-auto shadow-md shadow-[#B3B3B3] dark:shadow-[#222222] "
         onClick={toggleDropdown}
       >
-        <p className="dark:text-white text-lg mr-auto ml-2">{filterName}</p>
+        <p defaultValue="" className="dark:text-white text-lg mr-auto ml-2">
+          {filterName}
+        </p>
         <motion.span whileTap={{ rotate: isOpen ? 180 : 0 }}>
           <HiAdjustmentsVertical className="dark:text-white h-5 w-5 ml-auto mr-2" />
         </motion.span>
@@ -55,6 +57,7 @@ function FilterBy({ filterName, list }) {
             {list.map((list) => (
               <motion.button
                 key={list.id}
+                value={list.title}
                 className="block w-full px-4 py-2 text-left text-sm hover:bg-[#CCCCCC] dark:hover:bg-[#555555]"
               >
                 {list.title}

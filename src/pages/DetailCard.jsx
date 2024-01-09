@@ -24,9 +24,7 @@ function DetailCard() {
     // Call the fetchMovieDetail function
     fetchProductsDetail();
   }, [params.id]);
-
   console.log(product);
-
   return <div>{isFetching ? <p>Loading...</p> : <p>{product.title}</p>}</div>;
 }
 
