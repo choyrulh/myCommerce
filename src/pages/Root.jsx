@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Header from "../fragments/header";
+import Header from "../fragments/Header";
 import { Footer } from "../fragments/Footer";
 import Aside from "./../fragments/Aside";
 
