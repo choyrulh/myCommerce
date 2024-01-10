@@ -32,7 +32,7 @@ function App() {
         { path: "/wishlist", element: <Wishlist /> },
         { path: "/categories", element: <CategoriesPage /> },
         { path: "/products/:id", element: <DetailCard /> },
-        { path: "/products/q=query", element: <SearchPages /> },
+        { path: "/search-products/:query", element: <SearchPages /> },
         { path: "/categories/:category", element: <CategoriesPage /> },
       ],
     },

@@ -12,7 +12,7 @@ const SearchBar = () => {
     setQuery(value);
 
     if (value.length > 2) {
-      navigate(`/products/q=${value}`);
+      navigate(`/search-products/${value}`);
     } else {
       navigate("/");
     }

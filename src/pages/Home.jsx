@@ -7,13 +7,13 @@ import CardProduct from "./../components/CardProduct";
 import { useFetch } from "./../hooks/useFetch";
 
 function Home() {
-  const {  fetchedData } = useFetch(getAllProducts, []);
+  const { fetchedData } = useFetch(getAllProducts, []);
   return (
     <div className="w-full ml-auto ">
       <HeroProduct />
       <CategoryFrag />
       <HeroSection />
-      <CardContainer>
+      <CardContainer label="Featured Products">
         {fetchedData.map(
           (product, index) =>
             index < 5 && (

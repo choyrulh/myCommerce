@@ -9,7 +9,6 @@ import {
 import { HiSquares2X2 } from "react-icons/hi2";
 import { RiMacbookFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import { useFetchProductByCategory } from "../../hooks/useFetch";
 function CategoryFrag() {
   return (
     <>

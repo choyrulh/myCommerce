@@ -9,6 +9,7 @@ function CategoriesPage() {
   const [product, setProduct] = useState({});
   const [isFetching, setIsFetching] = useState(false);
 
+  console.log(params);
   useEffect(() => {
     async function fetchProductsByCategory() {
       setIsFetching(true);

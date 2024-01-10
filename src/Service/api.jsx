@@ -30,7 +30,7 @@ export const getAllCategories = async () => {
 export const getSearchByQuery = async (query) => {
   try {
     const { data } = await axiosCreate.get(`products/search?q=${query}`);
-    const resData = data.products;
+    const resData = data;
     console.log(resData);
     return resData;
   } catch (error) {
@@ -56,14 +56,14 @@ export const getProductByQuery = async (query) => {
   return response.data;
 };
 
-// get product Smartphones by category
-export const getAllSmartphones = async () => {
-  try {
-    const { data } = await axiosCreate.get(`products/category/smartphones`);
-    const resData = data.products;
-    console.log(resData);
-    return resData;
-  } catch (error) {
-    console.log(error);
-  }
-};
+// // get product Smartphones by category
+// export const getAllSmartphones = async () => {
+//   try {
+//     const { data } = await axiosCreate.get(`products/category/smartphones`);
+//     const resData = data.products;
+//     console.log(resData);
+//     return resData;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
