@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import headphone from "../assets/headphone.png";
+import headphone from "../assets/Headphone.png";
 import laptop from "../assets/MacbookM2.png";
 import camera from "../assets/camera.png";
 import iphone from "../assets/iphone.png";
