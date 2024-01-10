@@ -27,3 +27,33 @@ export function useFetch(fetchFn, initialValue) {
     error,
   };
 }
+
+export function useFetchProductByCategory(category) {
+  const [products, setProducts] = useState([]);
+  const [error, setError] = useState(null);
+  const [isFetching, setIsFetching] = useState(false);
+
+  const fetchProductsByCategory = async () => {
+    setIsFetching(true);
+    try {
+      const response = await fetch(
+        `https://dummyjson.com/products/category/${category}`
+      );
+      const data = await response.json();
+      setProducts(data.products);
+    } catch (error) {
+      setError({ message: error.message || "Failed to fetch products." });
+    }
+    setIsFetching(false);
+  };
+  useEffect(() => {
+    fetchProductsByCategory();
+  }, [category]);
+
+  return {
+    setProducts,
+    products,
+    error,
+    isFetching,
+  };
+}

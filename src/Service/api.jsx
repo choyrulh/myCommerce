@@ -25,16 +25,6 @@ export const getAllCategories = async () => {
     console.log(error);
   }
 };
-export const getAllSmartphones = async () => {
-  try {
-    const { data } = await axiosCreate.get(`products/category/smartphones`);
-    const resData = data.products;
-    console.log(resData);
-    return resData;
-  } catch (error) {
-    console.log(error);
-  }
-};
 
 // get search by query
 export const getSearchByQuery = async (query) => {
@@ -64,4 +54,16 @@ export const getProductByCategory = async (category) => {
 export const getProductByQuery = async (query) => {
   const response = await axiosCreate.get(`products/search?q=${query}`);
   return response.data;
+};
+
+// get product Smartphones by category
+export const getAllSmartphones = async () => {
+  try {
+    const { data } = await axiosCreate.get(`products/category/smartphones`);
+    const resData = data.products;
+    console.log(resData);
+    return resData;
+  } catch (error) {
+    console.log(error);
+  }
 };

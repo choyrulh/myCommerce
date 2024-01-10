@@ -9,6 +9,7 @@ import {
 import { HiSquares2X2 } from "react-icons/hi2";
 import { RiMacbookFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { useFetchProductByCategory } from "../../hooks/useFetch";
 function CategoryFrag() {
   return (
     <>
@@ -23,13 +24,13 @@ function CategoryFrag() {
               <h2>All Categories</h2>
             </li>
           </Link>
-          <Link to="./categories/laptop">
+          <Link to="./categories/laptops">
             <li className="flex flex-col items-center gap-2 justify-evenly hover:text-[#444444] dark:hover:text-white">
               <RiMacbookFill className="w-9 h-9 bg-white dark:bg-[#222222] rounded-full p-1 shadow-inner " />
               <h2>Laptop</h2>
             </li>
           </Link>
-          <Link to="./categories/smartphone">
+          <Link to="./categories/smartphones">
             <li className="flex flex-col items-center gap-2 justify-evenly hover:text-[#444444] dark:hover:text-white">
               <GiSmartphone className="w-9 h-9 bg-white dark:bg-[#222222] rounded-full p-1 shadow-inner" />
               <h2>Smartphone</h2>

@@ -8,7 +8,7 @@ function RootLayout() {
     <>
       <Header />
       <Aside />
-      <main className="dark:bg-[#111111] md:px-7">
+      <main className="dark:bg-[#111111] md:px-7 min-h-screen">
         <Outlet />
       </main>
       <Footer />

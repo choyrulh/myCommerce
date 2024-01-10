@@ -33,6 +33,7 @@ function App() {
         { path: "/categories", element: <CategoriesPage /> },
         { path: "/products/:id", element: <DetailCard /> },
         { path: "/products/q=query", element: <SearchPages /> },
+        { path: "/categories/:category", element: <CategoriesPage /> },
       ],
     },
   ]);
